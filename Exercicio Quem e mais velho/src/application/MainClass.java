@@ -1,7 +1,7 @@
 package application;
 
+import entities.MostrarDados;
 import entities.Pessoa;
-
 import java.util.Scanner;
 
 public class MainClass {
@@ -12,7 +12,7 @@ public class MainClass {
         int n = tc.nextInt();
 
         int idade, maiorIdade = 0;
-        String nome, nomePessoa = null;
+        String nome;
 
         Pessoa[] vetorPessoas = new Pessoa[n];
 
@@ -29,16 +29,7 @@ public class MainClass {
 
         }
 
-        maiorIdade = vetorPessoas[0].getIdade();
-
-        for (int i = 0; i < vetorPessoas.length; i++){
-            if (vetorPessoas[i].getIdade() > maiorIdade ){
-                maiorIdade = vetorPessoas[i].getIdade();
-                nomePessoa = vetorPessoas[i].getNome();
-            }
-        }
-
-        System.out.print("PESSOA MAIS VELHA: " + nomePessoa);
+        System.out.println(MostrarDados.dadosPessoas(vetorPessoas));
 
         tc.close();
     }
